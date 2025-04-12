@@ -21,7 +21,7 @@ const productSchema : Schema = new Schema<Product>(
         description: { type: String, required: true},
         price: { type: Number, required: true},
         stock: { type: Number, required: true, min:1 },
-        category_id: { type: Number, required:true, unique:true},
+        category_id: { type: Number, required:true},
     },
     {
         //Evito que me genere mongoose por defecto los atributos "createdAt" y "_v"
@@ -43,10 +43,29 @@ const addProduct = async (name:string,description:string,price:number,stock:numb
         await product.save()
         console.log("Producto añadido correctamente",product)
         return product;
-    } catch (error) {
-        console.log("Error intentar agregar el producto",error);
+    } catch (error:any) {
+        console.log("Error intentar agregar el producto",error.message);
     }
 }
 
-export {addProduct}
+//2- DELETE PRODUCT
+const deleteProduct = async (id:string) => {
+    try {
+        const product = await Product.findByIdAndDelete(id);
+        if(!product)
+        {
+            console.log("Producto no encontrado...")
+        }
+        else
+        {
+            console.log("Producto eliminado correctamente", product)
+        }
+    } catch (error:any) {
+        console.log("Error al eliminar el producto", error.message)
+    }
+    
+    
+}
+
+export {addProduct,deleteProduct}
 
