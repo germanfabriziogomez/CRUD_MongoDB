@@ -10,7 +10,7 @@ interface Product extends Document {
     name:string,
     description:string,
     price:number,
-    stock:boolean,
+    stock:number,
     category_id:number,
 }
 
@@ -20,8 +20,8 @@ const productSchema : Schema = new Schema<Product>(
         name: { type: String, required: true },
         description: { type: String, required: true},
         price: { type: Number, required: true},
-        stock: { type: Boolean, required: true, min:1 },
-        category_id: { type: Number, required:true},
+        stock: { type: Number, required: true, min:1 },
+        category_id: { type: Number, required:true, unique:true},
     },
     {
         //Evito que me genere mongoose por defecto los atributos "createdAt" y "_v"
@@ -36,6 +36,17 @@ productSchema.set("strict",true)
 const Product = mongoose.model<Product>("productos",productSchema)
 
 
+//1- CREATE PRODUCT
+const addProduct = async (name:string,description:string,price:number,stock:number,category_id:number) => {
+    try {
+        const product: Product = new Product({name,description,price,stock,category_id})
+        await product.save()
+        console.log("Producto añadido correctamente",product)
+        return product;
+    } catch (error) {
+        console.log("Error intentar agregar el producto",error);
+    }
+}
 
-
+export {addProduct}
 
