@@ -82,7 +82,7 @@ index.ts        → Punto de entrada principal
 1. Clonar el repositorio en tu computadora de forma local
 
 ```bash
-git clone https://github.com/germanfabriziogomez/TrabajoPracticoMongoDB
+git clone https://github.com/germanfabriziogomez/CRUD_MongoDB
 ```
 
 2. Acceder a la ruta de la carpeta donde fue clonado el proyecto
