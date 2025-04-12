@@ -5,7 +5,7 @@ Este proyecto implementa un **CRUD básico** (Create, Read, Update, Delete) para
 ###### ✍️ Autor: German Fabrizio Gomez
 ---
 
-## 📦 Estructura del Producto
+### 📦 Estructura del Producto
 
 El sistema se basa en la siguiente interfaz de producto:
 
@@ -19,7 +19,7 @@ interface Product extends Document {
 }
 ```
 
-🚀 Funcionalidades
+### 🚀 Funcionalidades
 #### 1. Crear Productos 🛠️✨
 Este método permite agregar un nuevo producto a la base de datos. Los parámetros necesarios son:
 
@@ -75,4 +75,36 @@ index.ts        → Punto de entrada principal
 .env            → Variables de entorno (con la URI de MongoDB)
 ```
 
+### Instrucciones para ejecutar el proyecto:
+
+###### ***Observacion: Antes que nada, deberas tener instalado **Node** en tu computadora***
+
+1. Clonar el repositorio en tu computadora de forma local
+
+```bash
+git clone https://github.com/germanfabriziogomez/TrabajoPracticoMongoDB
+```
+
+2. Acceder a la ruta de la carpeta donde fue clonado el proyecto
+
+```bash
+cd <ruta_donde_lo_clonaste>
+
+```
+3. Configurar tu variable de entorno ***.env*** 
+
+4. Ejecutar el proyecto
+
+```bash
+npm run start
+```
+
+***Cada vez que modifiques el codigo, ya sea para hacer una inserción de un producto, leerlo, actualizarlo o borrarlo, debes volver a compilar el proyecto, haciendo:***
+```bash
+npm run build
+```
+***y luego si hacer:***
+```bash
+npm run start
+````
 
