@@ -37,7 +37,7 @@ const Product = mongoose.model<Product>("productos",productSchema)
 
 
 //1- CREATE PRODUCT
-const addProduct = async (name:string,description:string,price:number,stock:number,category_id:number) => {
+const createProduct = async (name:string,description:string,price:number,stock:number,category_id:number) => {
     try {
         const product: Product = new Product({name,description,price,stock,category_id})
         await product.save()
@@ -48,8 +48,8 @@ const addProduct = async (name:string,description:string,price:number,stock:numb
     }
 }
 
-//2- DELETE PRODUCT
-const deleteProduct = async (id:string) => {
+//2- REMOVE PRODUCT
+const removeProduct = async (id:string) => {
     try {
         const product = await Product.findByIdAndDelete(id);
         if(!product)
@@ -63,9 +63,25 @@ const deleteProduct = async (id:string) => {
     } catch (error:any) {
         console.log("Error al eliminar el producto", error.message)
     }
-    
-    
+       
 }
 
-export {addProduct,deleteProduct}
+// 3- UPDATE PRODUCT
+const updateProduct = async (id:string,body:Partial<Product>) => {
+    try {
+        // "new:true" para que me devuelva al producto actualizado y "runValidators:true" para que cumpla con el esquema
+        const prod = await Product.findByIdAndUpdate(id,body,{new:true, runValidators:true})
+        if(!prod)
+        {
+            console.log("No se encontro al producto con ese id");
+        }
+        else
+        {
+            console.log("Producto actualizado correctamente",prod)
+        }
+    } catch (error:any) {
+        console.log("Error al actualizar producto", error.message)
+    }
+}
+export {createProduct,removeProduct,updateProduct}
 
