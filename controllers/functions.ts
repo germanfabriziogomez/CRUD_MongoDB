@@ -41,32 +41,30 @@ const createProduct = async (name:string,description:string,price:number,stock:n
     try {
         const product: Product = new Product({name,description,price,stock,category_id})
         await product.save()
-        console.log("Producto añadido correctamente",product)
-        return product;
+        console.log("Producto añadido correctamente",product);
     } catch (error:any) {
         console.log("Error intentar agregar el producto",error.message);
     }
 }
 
-//2- REMOVE PRODUCT
-const removeProduct = async (id:string) => {
+//2- READ PRODUCT
+const readProduct = async (id:string) => {
     try {
-        const product = await Product.findByIdAndDelete(id);
-        if(!product)
+        const prodFound = await Product.findById(id);
+        if(!prodFound)
         {
-            console.log("Producto no encontrado...")
+            console.log("Producto no encontrado");
         }
         else
         {
-            console.log("Producto eliminado correctamente", product)
+            console.log(prodFound);
         }
     } catch (error:any) {
-        console.log("Error al eliminar el producto", error.message)
+        console.log("Error al leer el producto", error.message)
     }
-       
 }
 
-// 3- UPDATE PRODUCT
+//3- UPDATE PRODUCT
 const updateProduct = async (id:string,body:Partial<Product>) => {
     try {
         // "new:true" para que me devuelva al producto actualizado y "runValidators:true" para que cumpla con el esquema
@@ -83,5 +81,25 @@ const updateProduct = async (id:string,body:Partial<Product>) => {
         console.log("Error al actualizar producto", error.message)
     }
 }
-export {createProduct,removeProduct,updateProduct}
+
+//4- DELETE PRODUCT
+const deleteProduct = async (id:string) => {
+    try {
+        const product = await Product.findByIdAndDelete(id);
+        if(!product)
+        {
+            console.log("Producto no encontrado...")
+        }
+        else
+        {
+            console.log("Producto eliminado correctamente", product)
+        }
+    } catch (error:any) {
+        console.log("Error al eliminar el producto", error.message)
+    }
+       
+}
+
+
+export {createProduct,readProduct,updateProduct,deleteProduct}
 
