@@ -40,7 +40,7 @@ createProduct("Celular","Samsung Galaxy A3", 130, 4, 20);
 ```
 
 #### 2. Leer Productos 📖🔍
-Este método permite leer un producto de la base de datos. El único parámetro necesario es su id.
+Este método permite leer un producto de la base de datos. El único parámetro necesario es su id (en forma de string).
 
 Ejemplo de invocacion:
 
@@ -49,16 +49,16 @@ readProduct("67f9adf03e878dcd558c34a9");
 ```
 
 #### 3. Actualizar Productos ✏️🔄
-Este método permite actualizar un producto de la base de datos, respetando siempre su esquema. El único parámetro necesario es su id.
+Este método permite actualizar un producto de la base de datos, respetando siempre su esquema. Recibe como parámetro su id (en forma de string) y una sub-estructura de Producto.
 
 Ejemplo de invocacion:
 
 ```
-updateProduct("67f9adf03e878dcd558c34a9");
+updateProduct("67f9adf03e878dcd558c34a9",{description: "nueva_descripcion"});
 ```
 
 #### 4. Eliminar Producto ❌🗑️
-Este método permite eliminar un producto de la base de datos. También recibe su id como su único parámetro.
+Este método permite eliminar un producto de la base de datos. Recibe su id como su único parámetro.
 
 Ejemplo de invocacion:
 
