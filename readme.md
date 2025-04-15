@@ -95,7 +95,7 @@ git clone https://github.com/germanfabriziogomez/CRUD_MongoDB
 cd <ruta_donde_lo_clonaste>
 
 ```
-3. Configurar tu variable de entorno ***.env*** 
+3. Configurar tu variable de entorno ***.env*** : debes poner la ruta hacia tu base de datos de mongo
 
 4. Descargar las dependencias necesarias para ejecutar el proyecto, ejecutando el siguiente comando:
 ```bash
