@@ -35,7 +35,7 @@ Este método permite agregar un nuevo producto a la base de datos. Los parámetr
 
 Ejemplo de invocacion:
 
-```
+```bash
 createProduct("Celular","Samsung Galaxy A3", 130, 4, 20);
 ```
 
@@ -44,7 +44,7 @@ createProduct("Celular","Samsung Galaxy A3", 130, 4, 20);
 
 Ejemplo de invocacion:
 
-```
+```bash
 readProduct("67f9adf03e878dcd558c34a9");
 ```
 2.2- El segundo metodo, permite leer todos los productos que hay en la base de datos. No recibe ningún parámetro.
@@ -58,7 +58,7 @@ Este método permite actualizar un producto de la base de datos, respetando siem
 
 Ejemplo de invocacion:
 
-```
+```bash
 updateProduct("67f9adf03e878dcd558c34a9",{description: "nueva_descripcion"});
 ```
 
