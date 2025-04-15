@@ -40,14 +40,19 @@ createProduct("Celular","Samsung Galaxy A3", 130, 4, 20);
 ```
 
 #### 2. Leer Productos 📖🔍
-Este método permite leer un producto de la base de datos. El único parámetro necesario es su id (en forma de string).
+2.1- El primer método permite leer un producto de la base de datos. El único parámetro necesario es su id (en forma de string).
 
 Ejemplo de invocacion:
 
 ```
 readProduct("67f9adf03e878dcd558c34a9");
 ```
+2.2- El segundo metodo, permite leer todos los productos que hay en la base de datos. No recibe ningún parámetro.
 
+Ejemplo de invocacion:
+```bash
+readProducts()
+```
 #### 3. Actualizar Productos ✏️🔄
 Este método permite actualizar un producto de la base de datos, respetando siempre su esquema. Recibe como parámetro su id (en forma de string) y una sub-estructura de Producto.
 
