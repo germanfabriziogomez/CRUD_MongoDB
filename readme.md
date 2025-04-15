@@ -75,7 +75,6 @@ deleteProduct("67f9adf03e878dcd558c34a9");
 ```
 /config         → Configuración de la base de datos (mongo.ts)
 /controllers    → Funciones CRUD (createProduct, readProduct, updateProduct, deleteProduct)
-/models         → Esquema del producto
 index.ts        → Punto de entrada principal
 .env            → Variables de entorno (con la URI de MongoDB)
 ```
