@@ -93,7 +93,11 @@ cd <ruta_donde_lo_clonaste>
 ```
 3. Configurar tu variable de entorno ***.env*** 
 
-4. Ejecutar el proyecto
+4. Descargar las dependencias necesarias para ejecutar el proyecto, ejecutando el siguiente comando:
+```bash
+npm install
+```
+5. Ejecutar el proyecto
 
 ```bash
 npm run start

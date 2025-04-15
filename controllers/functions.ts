@@ -64,6 +64,22 @@ const readProduct = async (id:string) => {
     }
 }
 
+//2.1- READ PRODUCTS
+const readProducts = async () => {
+    try {
+        const products = await Product.find()
+        if(!products)
+        {
+            console.log("No existen productos en la base de datos")
+        }
+        else
+        {
+            console.log(products)
+        }
+    } catch (error:any) {
+        console.log("Error al leer los productos", error.message)
+    }
+}
 //3- UPDATE PRODUCT
 const updateProduct = async (id:string,body:Partial<Product>) => {
     try {
@@ -101,5 +117,5 @@ const deleteProduct = async (id:string) => {
 }
 
 
-export {createProduct,readProduct,updateProduct,deleteProduct}
+export {createProduct,readProduct, readProducts,updateProduct,deleteProduct}
 

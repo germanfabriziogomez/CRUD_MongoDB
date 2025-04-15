@@ -1,4 +1,4 @@
-import {createProduct, readProduct, updateProduct, deleteProduct} from './controllers/functions'
+import {createProduct, readProduct, readProducts, updateProduct, deleteProduct} from './controllers/functions'
 
 const main = () => {
 
@@ -8,13 +8,18 @@ const main = () => {
     // createProduct("Celular","Iphone X", 1000, 10, 15);
 
     //READ PRODUCT
-    // readProduct("67f9adf03e878dcd558c34a9");
+    // readProduct("67f9adf03e878dcd558c34aa");
+    
+    //READ PRODUCTS
+    // readProducts();
     
     //UPDATE PRODUCT
     // updateProduct("67f9adf03e878dcd558c34ab",{stock:5})
 
     //DELETE PRODUCT
-    deleteProduct("67f9adf03e878dcd558c34ab")
+    // deleteProduct("67f9adf03e878dcd558c34ab")
+
+    
 }
 
 main();
