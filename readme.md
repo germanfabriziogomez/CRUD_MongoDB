@@ -107,7 +107,7 @@ npm install
 npm run start
 ```
 
-***Cada vez que modifiques el codigo, ya sea para hacer una inserción de un producto, leerlo, actualizarlo o borrarlo, debes volver a compilar el proyecto, haciendo:***
+***Nota: Cada vez que modifiques el codigo, ya sea para hacer una inserción de un producto, leerlo, actualizarlo o borrarlo, debes volver a compilar el proyecto, haciendo:***
 ```bash
 npm run build
 ```
