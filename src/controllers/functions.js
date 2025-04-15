@@ -42,7 +42,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteProduct = exports.updateProduct = exports.readProduct = exports.createProduct = void 0;
+exports.deleteProduct = exports.updateProduct = exports.readProducts = exports.readProduct = exports.createProduct = void 0;
 const mongo_1 = require("../config/mongo");
 const mongoose_1 = __importStar(require("mongoose"));
 //Conecto la base de datos
@@ -90,6 +90,22 @@ const readProduct = (id) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.readProduct = readProduct;
+//2.1- READ PRODUCTS
+const readProducts = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const products = yield Product.find();
+        if (!products) {
+            console.log("No existen productos en la base de datos");
+        }
+        else {
+            console.log(products);
+        }
+    }
+    catch (error) {
+        console.log("Error al leer los productos", error.message);
+    }
+});
+exports.readProducts = readProducts;
 //3- UPDATE PRODUCT
 const updateProduct = (id, body) => __awaiter(void 0, void 0, void 0, function* () {
     try {
