@@ -104,6 +104,7 @@ npm install
 5. Ejecutar el proyecto
 
 ```bash
+npm run build
 npm run start
 ```
 
